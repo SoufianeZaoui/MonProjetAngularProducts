@@ -8,9 +8,11 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
+                <a class="nav-link" [routerLink]="['/products']"
+                routerLinkActive="router-link-active" >The catalogue <span class="sr-only">(current)</span></a>
+
             <li class="nav-item dropdown">
+              <a class="nav-link"  routerLinkActive="router-link-active"routerLinkActive="router-link-active" >Add a new Product</a>
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="#">Action 1</a>

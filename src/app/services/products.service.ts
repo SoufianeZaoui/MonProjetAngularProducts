@@ -1,22 +1,18 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../domain/iproduct';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+  URL:string='http://localhost:3000/products';
+  constructor (private http : HttpClient){} // Dependency injection I
 
-  constructor() { }
-
-  public getAllProducts(): IProduct[]{
-  return [
-  {id : 'P100', name: 'Café', unitPrice: 2.5},
-  {id : 'P200', name: 'Thé', unitPrice: 2},
-  {id : 'P300', name: 'Jus d\'Orange', unitPrice: 3},
-  {id : 'P400', name: 'Coca Cola', unitPrice: 2.5}
-   ];
+  public getAllProducts():Observable <IProduct[]>{
+  return this.http.get<IProduct[]>(this.URL);
   }
-
   }
 
 
